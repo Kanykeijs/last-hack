@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -7,8 +7,17 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./NursingHouse.css";
 import CallIcon from "@mui/icons-material/Call";
+import getDate from "../../services/getDate";
 
 export default function NursingHouse() {
+
+
+  useEffect(() => {
+    getDate
+      .getNarshingHouse()
+      .then(res => console.log(res.data))
+  }, [])
+
   return (
     <Card sx={{ maxWidth: 1500 }}>
       <CardMedia

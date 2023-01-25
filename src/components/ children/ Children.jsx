@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -18,6 +18,8 @@ import {
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import VaccinesIcon from "@mui/icons-material/Vaccines";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import getData from '../../services/getDate'
+import { useProducts } from "../../context/AuthHelp";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -69,11 +71,35 @@ const images = [
   },
 ];
 
+// const bull = (
+//   <Box
+//     component="span"
+//     sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
+//   >
+//     •
+//   </Box>
+// );
+
+
+
 function Children() {
+  const {products,getProducts} = useProducts();
+  
+
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
+  const [children, setChildren] = useState([])
 
+  useEffect(() => {
+    getData
+      .getChildren()
+      .then(res => setChildren(res.data))
+ }, [])
+
+useEffect(()=>{
+  getProducts()
+},[])
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -89,9 +115,8 @@ function Children() {
   return (
     <>
       <Box>
-        <Card>
+        <Card sx={{ maxWidth: 1500 }}>
           <CardMedia
-            className="img-deti"
             sx={{ height: 600 }}
             image="https://www.viltiessala.lt/wp-content/uploads/2019/04/viltuke.jpg"
             title="green iguana"
@@ -207,7 +232,7 @@ function Children() {
         }
       />
       <div>
-        <h1 className="h1-one">Нужна помощь</h1>
+        <h1 className="h1">Нужна помощь</h1>
       </div>
       <div className="div-card">
         <Card className="card" sx={{ minWidth: 275 }}>
@@ -386,7 +411,7 @@ function Children() {
             <Button size="small"></Button>
           </CardActions>
         </Card>
-
+{/* 
         <Card className="card" sx={{ minWidth: 275 }}>
           <CardContent>
             <Typography
@@ -420,11 +445,11 @@ function Children() {
           <CardActions>
             <Button size="small"></Button>
           </CardActions>
-        </Card>
+        </Card> */}
       </div>
 
       <div>
-        <h1 className="h1-help">Вы уже помогли</h1>
+        <h1 className="h1">Вы уже помогли</h1>
       </div>
 
       <div className="div-card">

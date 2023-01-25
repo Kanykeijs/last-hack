@@ -60,11 +60,7 @@ const Footer = () => {
           <div className="col">
             <div className="inp">
               <div className="search">
-                <input
-                  className="search-inp"
-                  type="text"
-                  placeholder="Поиск по сайту"
-                />
+                <input type="text" placeholder="Поиск по сайту" />
               </div>
               <br />
               <br />

@@ -32,9 +32,10 @@ const AuthContextProvider = ({ children }) => {
       const res = await axios.post(`${API}token/`, formData);
       console.log(res);
       localStorage.setItem("token", JSON.stringify(res.data));
+
       localStorage.setItem("username", email);
       setUser(email);
-      navigate("/fonde");
+      navigate("/funde");
     } catch (error) {
       console.log(error.response.data.detail);
       setError(error.response.data.detail);
@@ -57,6 +58,8 @@ const AuthContextProvider = ({ children }) => {
           headers: { Authorization },
         }
       );
+
+      console.log(token);
 
       localStorage.setItem(
         "token",
@@ -81,6 +84,25 @@ const AuthContextProvider = ({ children }) => {
     navigate("/login");
   }
 
+  const getPassword = async (email) => {
+    try {
+      await axios(`${API}forgot-password/`, email);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const postActivity = async (formdata, key) => {
+    try {
+      const res = await axios.post(
+        `${API}forgot-password-complete/${key}/`,
+        formdata
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   let values = {
     checkAuth,
     register,
@@ -89,6 +111,8 @@ const AuthContextProvider = ({ children }) => {
     login,
     user,
     logout,
+    getPassword,
+    postActivity,
   };
 
   return <authContext.Provider value={values}>{children}</authContext.Provider>;

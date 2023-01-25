@@ -1,7 +1,7 @@
 .maincorus {
   display: flex;
   justify-content: center;
-
+  /* align-items: center; */
   border: 1px solid black;
   width: 80%;
   height: 500px;
@@ -20,12 +20,18 @@
   margin-left: 12%;
 }
 
+.h1 {
+  font-size: 50px;
+  margin-left: 10%;
+}
 .div-card {
   display: flex;
   justify-content: center;
   margin: 0;
 }
 .card {
+  /* background-image: url("https://www.life-line.ru/local/templates/general/redesign_v2/img/new-design/arc-green.svg"); */
+
   margin: 5% 5%;
   width: 10%;
 }
@@ -75,11 +81,13 @@
   margin-top: 200px;
 }
 @media all and (max-width: 1024px) {
+  /* body {
+    margin: 0;
+  } */
   .maincorus {
     width: 1024px;
     margin: 0;
   }
-
   .div-card {
     width: 100%;
     margin: 0;

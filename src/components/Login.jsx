@@ -13,10 +13,13 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Alert } from "@mui/material";
-import { useAuth } from "../context/AuthContext";
 import './Login.css'
+import { useAuth } from "../context/AuthContext";
+
+
 
 function Copyright(props) {
+    
   return (
     <Typography
       variant="body2"
@@ -37,7 +40,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
-  const { login, error} = useAuth();
+  const { login, error} = useAuth()
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -56,7 +59,9 @@ export default function Login() {
     login(formData, email);
   }
 
+  
   return (
+    
     <ThemeProvider  theme={theme}>
       <Container className="muss" component="main" maxWidth="xs">
         {error ? <Alert severity="error">{error}</Alert> : null}

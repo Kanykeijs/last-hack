@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 
+=======
+.div-card {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.card {
+  padding: 5% auto;
+}
+>>>>>>> df93028 (testest)
