@@ -1,0 +1,28 @@
+.h1 {
+  color: deepskyblue;
+  font-size: 80px;
+}
+.komu {
+  font-size: 50px;
+  margin-left: 10%;
+}
+.div-acrd {
+  margin: 5% 10%;
+  width: 500px;
+}
+.AccordionSummary {
+  margin-left: 10%;
+}
+
+/* .div-acrd:hover {
+  margin: 5% 5%;
+} */
+.acrd {
+  width: 60vw;
+  margin: 5% 10%;
+  border: 1px solid black 5px;
+  width: 85%;
+  height: 400px;
+  margin: 5% 5%;
+  background-color: rgba(128, 128, 128, 0.147);
+}

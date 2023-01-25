@@ -1,0 +1,32 @@
+.div-dobro {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-left: 5%;
+  margin-bottom: 10%;
+}
+.div-dobro-imgages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10%;
+  padding-right: 0;
+  /* margin-bottom: -100px; */
+}
+.div-text {
+  margin-top: -380px;
+  margin-left: 220px;
+  color: tomato;
+  font-size: 30px;
+}
+.div-text-two {
+  position: relative;
+  color: #e55426;
+  font-size: 30px;
+  /* font-weight: 400; */
+  margin-bottom: -147px;
+  margin-top: -3px;
+}
+h3 {
+  padding-top: 30px;
+  margin-left: 160px;
+}

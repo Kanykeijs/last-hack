@@ -1,0 +1,120 @@
+.maincorus {
+  display: flex;
+  justify-content: center;
+
+  border: 1px solid black;
+  width: 80%;
+  height: 500px;
+  margin: 5% auto;
+}
+.h1-help {
+  color: deepskyblue;
+  font-size: 50px;
+  margin-left: 10%;
+}
+.h1-one {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: bold;
+  color: deepskyblue;
+  font-size: 50px;
+  margin-left: 12%;
+}
+
+.div-card {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.card {
+  margin: 5% 5%;
+  width: 10%;
+}
+.card:hover {
+  background-size: cover;
+  background-color: rgb(0, 157, 255);
+
+  margin-top: 2px;
+
+  padding-bottom: 2px;
+
+  transition: 1s;
+}
+.long-div {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 11%;
+  margin-right: 25%;
+  width: 85%;
+  height: 2%;
+}
+.vse-deti_card {
+  background-color: rgb(255, 255, 255);
+  height: 70px;
+  width: 100%;
+}
+.vse-deti_card:hover {
+  background-color: rgb(221, 220, 220);
+}
+.vse-deti {
+  text-align: center;
+}
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nujno {
+  color: green;
+}
+
+.animals {
+  padding: 0;
+  border: none;
+}
+
+#crsl {
+  margin-top: 200px;
+}
+@media all and (max-width: 1024px) {
+  .maincorus {
+    width: 1024px;
+    margin: 0;
+  }
+
+  .div-card {
+    width: 100%;
+    margin: 0;
+  }
+  .card {
+    width: 100%;
+    margin: 0;
+  }
+  .h1-one {
+    margin-left: 250px;
+  }
+}
+@media all and (max-width: 768px) {
+  .corusimg {
+    width: 100% !important;
+  }
+  .maincorus {
+    margin-right: 10% !important;
+  }
+  .div-card {
+    width: 10% !important;
+  }
+  .css-pwngrv-MuiPaper-root-MuiCard-root {
+    width: 100px !important;
+  }
+  .h1-one {
+    font-size: 200%;
+  }
+  .h1-help {
+    font-size: 200%;
+  }
+}
+
+@media all and (max-width: 425px) {
+}
+
+@media all and (max-width: 315px) {
+}

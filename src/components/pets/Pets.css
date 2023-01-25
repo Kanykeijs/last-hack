@@ -1,0 +1,16 @@
+.watch {
+  font-size: 13px;
+  background-color: rgb(67, 199, 67);
+  color: white;
+  border-radius: 2px;
+  width: 115px;
+  height: 20%;
+}
+.watch:hover {
+  background-color: green;
+}
+.div-pets {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
