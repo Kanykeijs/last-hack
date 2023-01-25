@@ -1,54 +1,60 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import { useAuth } from "../../context/AuthContext";
+import { useEffect } from "react";
+import React from "react"
+import { Link } from "react-router-dom";
+  
+
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const {checkAuth, user} = useAuth()
+    useEffect(()=>{
+        checkAuth()
+    },[])
+    console.log(user);
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
+    
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+    
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+    // console.log({user});
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  return (
-    <AppBar
-      id="mbar"
-      sx={{ padding: "20px 36px", width: "100%", color: "black" }}
+ const ADMIN = "magometovmustafa@gmail.com";
+    return (
+        
+        <AppBar
+       
+        id="mbar"
+      sx={{ padding: "20px 36px", width: "100%" }}
       position="static"
     >
       <Container maxWidth="100%">
         <Toolbar id="tbar" disableGutters>
           <img
-            style={{ color: "blue" }}
-            src="https://www.life-line.ru/local/templates/general/donate_redesign/img/new-design/logo-ll2.svg"
+            src="https://www.life-line.ru/local/templates/general/redesign_v2/img/new-design/logo-ll.svg"
             alt=""
           />
           <Box>
+        
             <Box id="bbar">
               <Typography
                 variant="h6"
@@ -64,9 +70,26 @@ function Navbar() {
                   color: "inherit",
                   textDecoration: "none",
                 }}
+              >    
+                  </Typography>
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/medicine"
+                sx={{
+                  mr: 2,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".1rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
               >
                 Фонд
               </Typography>
+
               <Typography
                 variant="h6"
                 noWrap
@@ -88,7 +111,8 @@ function Navbar() {
                 variant="h6"
                 noWrap
                 component="a"
-                href="/deti"
+
+
                 sx={{
                   mr: 2,
                   display: { xs: "none", md: "flex" },
@@ -118,7 +142,22 @@ function Navbar() {
               >
                 Контакты
               </Typography>
+            
+            <Link
+              
+              to="/admin"
+            >
+           <Typography  style={{
+                color: "red",
+                margin: "0 10px",
+                textDecoration: "underline",
+              }}>   Admin</Typography>
+            </Link>
+          
             </Box>
+            <div style={{marginLeft: '220px'}}>
+                {user ? <div>{user}</div>: null}
+            </div>
             <Box id="nbtns">
               <Button id="nbbtn" sx={{ color: "#007aff" }}>
                 Хочу помочь

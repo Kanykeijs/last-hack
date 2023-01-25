@@ -1,4 +1,4 @@
-import * as React from "react";
+import  React, { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -9,9 +9,16 @@ import "./Pets.css";
 import { Box, Pagination, PaginationItem, Stack } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import getDate from "../../services/getDate";
 
 const Pets = () => {
-  // test
+const [pets, setPets] = useState([])
+console.log(pets);
+  useEffect(() => {
+    getDate
+      .getPets()
+      .then(res => setPets(res.data))
+  }, [])
   return (
     <Card sx={{ maxWidth: 1500 }}>
       <Box>

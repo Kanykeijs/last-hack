@@ -13,6 +13,9 @@ import Pets from "../components/pets/Pets";
 import Donate from "../components/donate/Donate";
 import Partners from "../components/partners/Partners";
 import Volunteers from "../components/volunteers/Volunteers";
+import Forgot from "../components/Forgot";
+import ForgotActiv from "../components/ForgotActiv";
+import AdminPage from "../pages/AdminPage";
 // import Petss from "../components/pets/Petss";
 
 const MainRoutes = () => {
@@ -82,6 +85,21 @@ const MainRoutes = () => {
       link: "volunteers",
       element: <Volunteers />,
       id: 13,
+    },
+    {
+      link: "forgot",
+      element: <Forgot />,
+      id: 14,
+    },
+    {
+      link: "forgotActiv",
+      element: <ForgotActiv />,
+      id: 13,
+    },
+    {
+      link: "admin",
+      element: <AdminPage />,
+      id: 15,
     },
   ];
   return (
