@@ -1,0 +1,108 @@
+.maincorus {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  border: 1px solid black;
+  width: 80%;
+  height: 500px;
+  margin: 5% auto;
+}
+.h1 {
+  font-size: 50px;
+  margin-left: 10%;
+}
+.div-card {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.card {
+  /* background-image: url("https://www.life-line.ru/local/templates/general/redesign_v2/img/new-design/arc-green.svg"); */
+
+  margin: 5% 5%;
+  width: 10%;
+}
+.card:hover {
+  /* background-color: rgb(0, 183, 255); */
+  /* background-image: url("https://www.life-line.ru/local/templates/general/redesign_v2/img/new-design/arc-green.svg"); */
+  background-size: cover;
+  background-color: rgb(55, 164, 231);
+  /* color: white; */
+  /* width: 20%; */
+  /* height: 30%; */
+  margin-top: 2px;
+  /* margin-left: 5px; */
+  padding-bottom: 2px;
+  /* margin-bottom: 5px; */
+  transition: 1s;
+}
+.long-div {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 11%;
+  margin-right: 25%;
+  width: 85%;
+  height: 2%;
+}
+.vse-deti_card {
+  background-color: rgb(255, 255, 255);
+  height: 70px;
+  width: 100%;
+}
+.vse-deti_card:hover {
+  background-color: rgb(221, 220, 220);
+}
+.vse-deti {
+  text-align: center;
+}
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nujno {
+  color: green;
+}
+
+.animals {
+  padding: 0;
+  border: none;
+  /* background-color: ; */
+}
+
+#crsl {
+  margin-top: 200px;
+}
+@media all and (max-width: 1024px) {
+  /* body {
+    margin: 0;
+  } */
+  .maincorus {
+    width: 1024px;
+    margin: 0;
+  }
+  /* .corusimg {
+    width: 100%;
+  } */
+  .div-card {
+    width: 100%;
+    margin: 0;
+  }
+  .card {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media all and (max-width: 768px) {
+  .corusimg {
+    width: 100% !important;
+  }
+  .maincorus {
+    margin-right: 10% !important;
+  }
+}
+
+@media all and (max-width: 425px) {
+}
+
+@media all and (max-width: 315px) {
+}

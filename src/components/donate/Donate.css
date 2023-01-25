@@ -1,0 +1,17 @@
+.h1 {
+  color: deepskyblue;
+  font-size: 80px;
+}
+.komu {
+  font-size: 50px;
+  margin-left: 10%;
+}
+.acrd {
+  width: 60vw;
+  margin: 10vw auto;
+  border: 1px solid black 5px;
+  width: 50%;
+  height: 400px;
+  margin: 5% 5%;
+  background-color: rgba(128, 128, 128, 0.147);
+}
